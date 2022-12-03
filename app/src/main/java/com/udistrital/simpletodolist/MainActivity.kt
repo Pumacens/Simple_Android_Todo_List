@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity() {
         
         lvItems.setOnItemClickListener { adapterView, view, i, l ->
             showAlertDialog(i, arrayadapter)
+
         }
 
 
@@ -67,6 +68,7 @@ class MainActivity : AppCompatActivity() {
             .setPositiveButton("Yes", DialogInterface.OnClickListener { dialogInterface, i ->
                 itemsListArray.removeAt(itemPos)
                 arrayAdapter.notifyDataSetChanged()
+                fileHelper.writeData(itemsListArray, applicationContext)
             })
 
         alertDialog.create().show()
