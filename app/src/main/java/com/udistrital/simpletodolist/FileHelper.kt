@@ -1,10 +1,7 @@
 package com.udistrital.simpletodolist
 
 import android.content.Context
-import java.io.FileInputStream
-import java.io.FileOutputStream
-import java.io.ObjectInputStream
-import java.io.ObjectOutputStream
+import java.io.*
 
 class FileHelper {
 
@@ -19,9 +16,14 @@ class FileHelper {
 
     fun readData(context: Context): ArrayList<String> {
         var itemList : ArrayList<String>
-        var fis: FileInputStream = context.openFileInput(FILENAME)
-        var ois = ObjectInputStream(fis)
-        itemList = ois.readObject() as ArrayList<String>
-        return itemList
+        try {
+            var fis: FileInputStream = context.openFileInput(FILENAME)
+            var ois = ObjectInputStream(fis)
+            itemList = ois.readObject() as ArrayList<String>
+            return itemList
+
+        } catch (e: FileNotFoundException){
+            return ArrayList()
+        }
     }
 }
