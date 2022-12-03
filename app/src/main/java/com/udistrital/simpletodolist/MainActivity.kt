@@ -26,8 +26,9 @@ class MainActivity : AppCompatActivity() {
                 itemsList.add(itemText)
                 var arrayadapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, itemsList)
                 lvItems.adapter = arrayadapter
+
             } else{
-                Toast.makeText(applicationContext, "You have to write the item name", Toast.LENGTH_LONG)
+                Toast.makeText(applicationContext, "You have to write the item name", Toast.LENGTH_LONG).show()
             }
         }
     }
