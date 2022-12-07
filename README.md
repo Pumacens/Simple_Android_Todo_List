@@ -1,3 +1,3 @@
-# simpleTodoList
+# Simple Android Todo List
 
-A sample project with a simple ToDo list. 
+A example android project with a simple ToDo list. 
